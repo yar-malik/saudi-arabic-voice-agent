@@ -46,29 +46,44 @@ with you: [talk to us](https://voho.ai/book-demo).
 
 ## Quick start
 
-You need a Voho API key. Create one at [app.voho.ai](https://app.voho.ai) under **API Tokens**.
+One key, one command, about a minute. Get a key at
+[app.voho.ai/tokens](https://app.voho.ai/tokens) — new accounts start with
+**$25 of credit**, which is enough to run this many times over.
 
 ```bash
 git clone https://github.com/yar-malik/saudi-arabic-voice-agent.git
 cd saudi-arabic-voice-agent
-cp .env.example .env      # then paste your key into .env
+export VOHO_API_KEY=voho_sk_live_...
 ```
 
-### Node.js
+### Node — no dependencies, Node 18+
 
 ```bash
-npm install
-node examples/node/index.mjs
+npm start
+# or: node examples/node/index.mjs ["what the caller says"]
 ```
 
-### Python
+### Python — no dependencies, Python 3.9+
 
 ```bash
-pip install -r requirements.txt
-python examples/python/main.py
+python examples/python/main.py ["what the caller says"]
 ```
 
-Both examples answer a caller reporting a broken air conditioner, then raise the service request.
+Either one speaks a line in Najdi Arabic and writes voho.mp3. Set VOHO_AGENT_ID and it holds a conversation instead, writing the reply as reply.mp3.
+
+### Have it answer back
+
+Speaking a line needs nothing but a key. To hold a conversation, create an
+agent at [app.voho.ai/agents](https://app.voho.ai/agents) — pick a template,
+edit the prompt — then take its id from the URL:
+
+```bash
+export VOHO_AGENT_ID=...        # from app.voho.ai/agents/<id>
+npm start "أبي أعرف عن خدماتكم"
+```
+
+The agent answers from its own prompt, in its own voice, and `reply.mp3` is
+what the caller would have heard.
 
 ## Arabic voices
 
