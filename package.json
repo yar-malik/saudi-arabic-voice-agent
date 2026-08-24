@@ -4,21 +4,9 @@
   "private": true,
   "type": "module",
   "description": "Build a phone agent that speaks Najdi Saudi Arabic, understands the caller, and completes the request in your own systems.",
+  "engines": { "node": ">=18" },
   "scripts": {
-    "start": "node examples/node/index.mjs",
-    "stream": "node examples/node/stream.mjs"
+    "start": "node examples/node/index.mjs"
   },
-  "keywords": [
-    "saudi-arabia",
-    "arabic",
-    "najdi",
-    "voice-ai",
-    "text-to-speech",
-    "contact-center",
-    "arabic-nlp",
-    "saudi-arabic",
-    "ivr",
-    "enterprise-ai"
-  ],
   "license": "MIT"
 }
